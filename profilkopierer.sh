@@ -20,7 +20,7 @@ SCHUELERRAW=$(getent group schueler-schule)
 IFS=':' read -ra ADDR3 <<< "$SCHUELERRAW"
 SCHUELERS="${ADDR3[-1]}"
 
-IFS=',' read -ra ADDR4 <<< "$LEHRERS"
+IFS=',' read -ra ADDR4 <<< "$SCHUELERS"
 for i in "${ADDR4[@]}"; do
   if [ "$i" != "aprofschueler" ]; then
       echo "Processing $(echo $i)"
